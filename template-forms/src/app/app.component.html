@@ -1,0 +1,15 @@
+<form (submit)="onFormSubmitted()" #registrationForm="ngForm">
+  Name: <input name="name" type="text" [(ngModel)]="registration.name" required><br>
+  Email: <input name="email" type="email" [(ngModel)]="registration.email" email required><br>
+  credit card: <input name="card" type="number" [(ngModel)]="registration.card"><br>
+  street: <input name="street" type="text" [(ngModel)]="registration.address.street" required><br>
+  city: <input name="city" type="text" [(ngModel)]="registration.address.city" required><br>
+  zipcode: <input name="zipCode" type="number" [(ngModel)]="registration.address.zipCode" required><br>
+
+  phone: <input name="phone" type="number" [(ngModel)]="registration.phone" pattern="\d{9}" required><br>
+  <div style="color: red" *ngIf="registrationForm.form.controls.phone?.invalid">Phone is not valid!</div>
+
+  <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+</form>
+
+<pre>{{registration | json}}</pre>

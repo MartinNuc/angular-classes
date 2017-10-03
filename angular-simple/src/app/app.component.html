@@ -1,0 +1,16 @@
+<ul>
+  <li *ngFor="let trees of timestamps">
+    {{trees}}
+  </li>
+</ul>
+
+
+<app-hello-world (onIncrement)="addDate()"></app-hello-world>
+
+<app-my-second-compoment></app-my-second-compoment>
+
+<router-outlet></router-outlet>
+
+<app-timestamp-list [items]="timestamps"></app-timestamp-list>
+
+<app-my-second-compoment></app-my-second-compoment>
